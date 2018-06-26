@@ -16,6 +16,14 @@ echo "DEPLOY_PRIME_URL $DEPLOY_PRIME_URL"
 
 # pass deployed url to Cypress as an environment variable
 # https://on.cypress.io/environment-variables
-curl -u ${CIRCLE_API_USER_TOKEN}: \
-      -d build_parameters[CYPRESS_baseUrl]=$DEPLOY_URL \
-      https://circleci.com/api/v1.1/project/github/bahmutov/gatsby-starter-blog/tree/$BRANCH
+
+if [[ -n PULL_REQUEST ]]; then
+  echo "Triggering pull request build - cannot use BRANCH directly"
+  curl -u ${CIRCLE_API_USER_TOKEN}: \
+        -d build_parameters[CYPRESS_baseUrl]=$DEPLOY_URL \
+        https://circleci.com/api/v1.1/project/github/bahmutov/gatsby-starter-blog/tree/pulls/$REVIEW_ID
+else
+  curl -u ${CIRCLE_API_USER_TOKEN}: \
+        -d build_parameters[CYPRESS_baseUrl]=$DEPLOY_URL \
+        https://circleci.com/api/v1.1/project/github/bahmutov/gatsby-starter-blog/tree/$BRANCH
+fi
