@@ -17,7 +17,7 @@ echo "DEPLOY_PRIME_URL $DEPLOY_PRIME_URL"
 # pass deployed url to Cypress as an environment variable
 # https://on.cypress.io/environment-variables
 
-if [[ -n PULL_REQUEST ]]; then
+if [ "$PULL_REQUEST" = true ]; then
   echo "Triggering pull request build - cannot use BRANCH directly"
   curl -u ${CIRCLE_API_USER_TOKEN}: \
         -d build_parameters[CYPRESS_baseUrl]=$DEPLOY_URL \
