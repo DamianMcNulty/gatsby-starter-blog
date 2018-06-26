@@ -43,6 +43,11 @@ jobs:
               npm test
             fi
 
+      - store_artifacts:
+          path: ~/repo/cypress/screenshots
+      - store_artifacts:
+          path: ~/repo/cypress/videos
+
 workflows:
   version: 2
   tests:
