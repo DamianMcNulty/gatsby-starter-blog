@@ -21,7 +21,7 @@ if [ "$PULL_REQUEST" = true ]; then
   echo "Triggering pull request build - cannot use BRANCH directly"
   curl -u ${CIRCLE_API_USER_TOKEN}: \
         -d build_parameters[CYPRESS_baseUrl]=$DEPLOY_URL \
-        https://circleci.com/api/v1.1/project/github/bahmutov/gatsby-starter-blog/pulls/$REVIEW_ID
+        https://circleci.com/api/v1.1/project/github/bahmutov/gatsby-starter-blog/pull/$REVIEW_ID
 else
   curl -u ${CIRCLE_API_USER_TOKEN}: \
         -d build_parameters[CYPRESS_baseUrl]=$DEPLOY_URL \
