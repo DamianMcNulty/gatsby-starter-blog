@@ -21,6 +21,9 @@ echo "DEPLOY_PRIME_URL $DEPLOY_PRIME_URL"
 
 if [ "$PULL_REQUEST" = true ]; then
   echo "Triggering pull request build - cannot use BRANCH directly"
+  # instead need to use review id (= pull request number)
+  # and pass commit ref as revision
+  # https://discuss.circleci.com/t/api-trigger-build-of-pull-request-from-fork/7784/19
   curl -u ${CIRCLE_API_USER_TOKEN}: \
         -d build_parameters[CYPRESS_baseUrl]=$DEPLOY_URL \
         -d revision=$COMMIT_REF \
