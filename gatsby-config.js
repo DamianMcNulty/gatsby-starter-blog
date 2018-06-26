@@ -3,9 +3,9 @@ module.exports = {
     title: 'Gatsby + Netlify + Cypress.io',
     author: 'Gleb Bahmutov',
     description: 'Gatsby deployed using Netlify and tested using Cypress.io',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-blog/',
+    siteUrl: 'https://gatsby-blog-0a5be4.netlify.com/',
   },
-  pathPrefix: '/gatsby-blog',
+  pathPrefix: '/',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
