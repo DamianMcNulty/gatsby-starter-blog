@@ -33,8 +33,15 @@ jobs:
           key: dependencies-{{ checksum "package.json" }}
 
       - run:
-          name: Run server and E2E tests
-          command: npm test
+          name: Run server and E2E tests locally or against external URL
+          command: |
+            if [[ -v CYPRESS_baseUrl ]]
+              echo Testing external url $CYPRESS_baseUrl
+              npm run cy:run
+            else
+              echo Running local server and testing it
+              npm test
+            fi
 
 workflows:
   version: 2
