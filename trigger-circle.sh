@@ -3,6 +3,14 @@
 # todo: use correct repo url for pull requests and forks
 
 echo "Triggering Circle build against deployed url $DEPLOY_URL branch $BRANCH"
+echo "Other Netlify variables"
+echo "REPOSITORY_URL $REPOSITORY_URL"
+echo "PULL_REQUEST $PULL_REQUEST"
+echo "CONTEXT $CONTEXT"
+echo "REVIEW_ID $REVIEW_ID"
+echo "URL $URL"
+echo "DEPLOY_URL $DEPLOY_URL"
+echo "DEPLOY_PRIME_URL $DEPLOY_PRIME_URL"
 
 # Circle API https://circleci.com/docs/api/v1-reference/
 
