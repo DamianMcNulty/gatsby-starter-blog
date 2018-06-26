@@ -30,7 +30,7 @@ jobs:
             - ~/.npm
             # Cypress binary (or yarn dependencies)
             - ~/.cache
-          key: dependencies-{{ checksum "todomvc/package.json" }}
+          key: dependencies-{{ checksum "package.json" }}
 
       - run:
           name: Run server and E2E tests
