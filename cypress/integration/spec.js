@@ -1,9 +1,8 @@
 /// <reference types="cypress" />
-beforeEach(() => {
-  cy.visit('/')
-})
 it('works', () => {
-  cy.contains('Combination of Gatsby to Netlify and tested using Cypress.io is pretty cool.')
+  // actual url is "baseUrl" in "cypress.json"
+  cy.visit('/')
+  cy.contains('Test All The Things')
   // https://on.cypress.io/screenshot
   cy.screenshot('site', {capture: 'runner'})
 })

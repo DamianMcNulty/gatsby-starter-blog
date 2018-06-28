@@ -6,3 +6,4 @@ public
 .cache/
 yarn.lock
 cypress/videos
+cypress/screenshots

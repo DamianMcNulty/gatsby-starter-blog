@@ -3,7 +3,7 @@ import 'typeface-merriweather';
 // Import typefaces
 import 'typeface-montserrat';
 import { rhythm } from '../utils/typography';
-import profilePic from './profile-pic.jpg';
+import profilePic from './cypress-logo.png';
 
 
 
@@ -18,7 +18,7 @@ class Bio extends React.Component {
       >
         <img
           src={profilePic}
-          alt={`Kyle Mathews`}
+          alt={`Cypress logo`}
           style={{
             marginRight: rhythm(1 / 2),
             marginBottom: 0,
@@ -27,7 +27,7 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          Combination of Gatsby to Netlify and tested using Cypress.io is pretty cool.
+          Deploy Gatsby to Netlify and test with Cypress.io before deployment (using Netlify itself) and after deployment (using CircleCI)
         </p>
       </div>
     )
