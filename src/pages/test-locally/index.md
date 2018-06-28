@@ -37,7 +37,7 @@ To start Gatsby, wait for it to start serving locally and run Cypress tests ther
     "test": "start-test develop 8000 cy:run",
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "predeploy": "npm test",
+    "predeploy": "CI=1 npm i cypress; npm test",
     "deploy": "npm run build",
     "cy:run": "cypress run",
     "cy:open": "cypress open"

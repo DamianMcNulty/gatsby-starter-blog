@@ -7,6 +7,17 @@ You can run local Gatsby server and run Cypress tests on Netlify!
 
 Yup, it _just works_.
 
+I have set `npm run deploy` as the deploy command on Netlify.
+
+The only trick is _reinstall_ Cypress binary because while Netlify caches `node_modules` folder, it does not cache `~/.cache` folder where the binary is placed. Here is the script command
+
+```
+"predeploy": "CI=1 npm i cypress; npm test",
+"deploy": "npm run build"
+```
+
+**tip** I am using `CI=1` environment variable to avoid terminal [progress bar issues](https://github.com/cypress-io/cypress/issues/1243)
+
 Here is an [example deployment](https://app.netlify.com/sites/gatsby-blog-0a5be4/deploys/5b34e7c167610c181364954f) of running the tests locally on Netlify. You can ignore the `D-Bus` warning
 
 ```text
@@ -47,4 +58,4 @@ Here is an [example deployment](https://app.netlify.com/sites/gatsby-blog-0a5be4
 ...
 ```
 
-Of course, Netlify is not a full CI, so it would be hard to see or download build artifacts like Cypress screenshots or video of the test run.
+Of course, Netlify is not a full CI, so it would be hard to see or download build artifacts like Cypress screenshots or video of the test run, or even [configure Cypress binary caching](https://docs.cypress.io/guides/guides/continuous-integration.html#Caching-the-Cypress-Binary). But it works ;)
