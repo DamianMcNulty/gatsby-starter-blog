@@ -44,3 +44,7 @@ To start Gatsby, wait for it to start serving locally and run Cypress tests ther
   }
 }
 ```
+
+So when I run `npm test` it starts the server, runs Cypress tests and closes the server.
+
+**Tip** if the terminal stops echoing back keys as you type after running these tests, run shell command `reset` to get it back.
