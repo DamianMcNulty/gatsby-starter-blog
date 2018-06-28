@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import Link from 'gatsby-link';
+import React from 'react';
+import { rhythm, scale } from '../utils/typography';
 
-import { rhythm, scale } from '../utils/typography'
 
 class Template extends React.Component {
   render() {
@@ -30,7 +30,7 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            Gatsby Starter Blog
+            Test All The Things
           </Link>
         </h1>
       )
@@ -51,7 +51,7 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            Gatsby Starter Blog
+            Test All The Things
           </Link>
         </h3>
       )
