@@ -10,6 +10,7 @@ Yup, it _just works_.
 Here is an [example deployment](https://app.netlify.com/sites/gatsby-blog-0a5be4/deploys/5b34e7c167610c181364954f) of running the tests locally on Netlify. You can ignore the `D-Bus` warning
 
 ```text
+...
 9:53:44 AM: Opening Cypress...
 9:53:50 AM: ====================================================================================================
 9:53:50 AM:   (Run Starting)
@@ -26,6 +27,24 @@ Here is an [example deployment](https://app.netlify.com/sites/gatsby-blog-0a5be4
 9:53:56 AM:   ✓ works (1638ms)
 9:53:56 AM:   1 passing (2s)
 9:53:56 AM:   (Results)
+9:53:56 AM:   (Screenshots)
+9:53:56 AM:   - /opt/build/repo/cypress/screenshots/site.png (1280x720)
+9:53:56 AM:   (Video)
+9:53:56 AM:   - Started processing:   Compressing to 32 CRF
+9:53:58 AM:   - Finished processing:  /opt/build/repo/cypress/videos/spec.js.mp4 (1 second)
+9:53:58 AM: ====================================================================================================
+9:53:58 AM:   (Run Finished)
+9:53:58 AM:       Spec                                                Tests  Passing  Failing  Pending  Skipped
+9:53:58 AM:   ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+9:53:58 AM:   │ ✔ spec.js                                   00:01        1        1        -        -        - │
+9:53:58 AM:   └────────────────────────────────────────────────────────────────────────────────────────────────┘
+9:53:58 AM:     All specs passed!                           00:01        1        1        -        -        -
+9:53:58 AM:
+9:53:58 AM: > gatsby-starter-blog@1.0.0 deploy /opt/build/repo
+9:53:58 AM: > npm run build
+9:53:58 AM: > gatsby-starter-blog@1.0.0 build /opt/build/repo
+9:53:58 AM: > gatsby build
+...
 ```
 
 Of course, Netlify is not a full CI, so it would be hard to see or download build artifacts like Cypress screenshots or video of the test run.
