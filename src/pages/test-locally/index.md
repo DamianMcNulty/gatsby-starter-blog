@@ -29,7 +29,11 @@ it('works', () => {
 })
 ```
 
-To start Gatsby, wait for it to start serving locally and run Cypress tests there is a little utility [start-server-and-test](https://github.com/bahmutov/start-server-and-test). Here are the script commands in the `package.json` to test the blog before deploying.
+Start Gatsby in one terminal `npm run develop` and Cypress in another terminal with `npx cypress open` and see the test.
+
+![First test](/first-test.png)
+
+To run tests headlessly, we need to start Gatsby, wait for it to process files, and run Cypress tests. I wrote a little utility [start-server-and-test](https://github.com/bahmutov/start-server-and-test) to simplify these into a single shell command. Here are the script commands in the `package.json` to test the blog before deploying.
 
 ```json
 {

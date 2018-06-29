@@ -9,6 +9,8 @@ Yup, it _just works_.
 
 I have set `npm run deploy` as the deploy command on Netlify.
 
+![Netlify deployment settings](/deploy-settings.png)
+
 The only trick is _reinstall_ Cypress binary because while Netlify caches `node_modules` folder, it does not cache `~/.cache` folder where the binary is placed. Here is the script command
 
 ```
